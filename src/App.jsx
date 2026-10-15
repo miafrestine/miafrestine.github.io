@@ -16,7 +16,9 @@ import {
   Linkedin,
   Mail,
   Menu,
+  Moon,
   Palette,
+  Sun,
   X
 } from "lucide-react";
 
@@ -102,6 +104,8 @@ function ProjectArtwork({ kind }) {
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeFilter, setActiveFilter] = useState("All work");
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const [headerTransparent, setHeaderTransparent] = useState(false);
 
   useEffect(() => {
     const elements = document.querySelectorAll(".reveal");
@@ -117,6 +121,18 @@ function App() {
     return () => observer.disconnect();
   }, [activeFilter]);
 
+  useEffect(() => {
+    let previousScrollY = window.scrollY;
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setHeaderTransparent(currentScrollY > previousScrollY && currentScrollY > 80);
+      previousScrollY = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const filters = ["All work", "Web design", "Web application", "Graphic design"];
   const filteredProjects = projects.filter((project) => {
     if (activeFilter === "All work") return true;
@@ -127,16 +143,20 @@ function App() {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <div className="site-shell">
-      <header className="site-header">
+    <div className="site-shell" data-theme={isDarkTheme ? "dark" : "light"}>
+      <header className={headerTransparent ? "site-header is-transparent" : "site-header"}>
         <a href="#home" className="brand" aria-label="Mia Patiluna home"><span className="brand-mark">m<span>.</span><span>p</span></span></a>
-        <button className="mobile-menu" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation">{menuOpen ? <X/> : <Menu/>}</button>
         <nav className={menuOpen ? "nav-links nav-open" : "nav-links"}>
           <a href="#work" onClick={closeMenu}>Selected work <span>↘</span></a>
           <a href="#about" onClick={closeMenu}>About me</a>
           <a href="#skills" onClick={closeMenu}>Skills</a>
-          <a href="#contact" className="nav-contact" onClick={closeMenu}>Let's connect <ArrowUpRight size={15}/></a>
+          <a href="#contact" className="nav-contact mobile-connect" onClick={closeMenu}>Let's connect <ArrowUpRight size={15}/></a>
         </nav>
+        <div className="header-actions">
+          <a href="#contact" className="header-connect">Let's connect <ArrowUpRight size={15}/></a>
+          <button className="theme-toggle" type="button" onClick={() => setIsDarkTheme(!isDarkTheme)} aria-label={`Switch to ${isDarkTheme ? "light" : "dark"} theme`} aria-pressed={isDarkTheme} title={`Switch to ${isDarkTheme ? "light" : "dark"} theme`}>{isDarkTheme ? <Sun size={18}/> : <Moon size={18}/>}</button>
+        </div>
+        <button className="mobile-menu" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation">{menuOpen ? <X/> : <Menu/>}</button>
       </header>
 
       <main>
