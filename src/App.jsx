@@ -17,7 +17,6 @@ import {
   Mail,
   Menu,
   Palette,
-  Sparkles,
   X
 } from "lucide-react";
 
@@ -147,7 +146,7 @@ function App() {
             <h1 className="hero-title reveal">I turn ideas<br/>into <span className="serif-word">digital</span><br/><span className="title-last">experiences<span className="title-period">.</span></span></h1>
             <p className="hero-description reveal">I'm Mia Patiluna, a fourth-year BSIT student passionate about UI/UX and web design. I love creating digital experiences that feel thoughtful, look beautiful, and work for real people.</p>
             <div className="hero-actions reveal"><a className="button-primary" href="#work">Explore my work <ArrowDownRight size={17}/></a><a className="button-secondary" href="/resume.pdf" download="Mia-Patiluna-CV.pdf"><Download size={15}/> Download CV</a></div>
-            <div className="hero-meta reveal"><div className="meta-icon"><Sparkles size={17}/></div><div><b>Currently looking for OJT</b><span>Ready to learn, collaborate, and grow.</span></div></div>
+            <div className="hero-meta reveal"><span className="meta-icon" aria-hidden="true"><span className="meta-dot"/></span><div><b>Currently looking for OJT</b><span>Ready to learn, collaborate, and grow.</span></div></div>
           </div>
           <div className="hero-visual reveal">
             <div className="visual-grid"/>
