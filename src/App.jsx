@@ -130,7 +130,7 @@ function App() {
   return (
     <div className="site-shell">
       <header className="site-header">
-        <a href="#home" className="brand" aria-label="Mia Patiluna home"><span className="brand-mark">m<span>.</span></span><span className="brand-name">mia patiluna<small>DESIGN PORTFOLIO</small></span></a>
+        <a href="#home" className="brand" aria-label="Mia Patiluna home"><span className="brand-mark">m<span>.</span><span>p</span></span></a>
         <button className="mobile-menu" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation">{menuOpen ? <X/> : <Menu/>}</button>
         <nav className={menuOpen ? "nav-links nav-open" : "nav-links"}>
           <a href="#work" onClick={closeMenu}>Selected work <span>↘</span></a>
@@ -160,11 +160,10 @@ function App() {
             <div className="floating-note"><span className="note-icon"><Palette size={16}/></span><span><b>Design + technology</b><small>Where my interests meet</small></span></div>
             <div className="visual-side-note">MADE WITH CURIOSITY · 2026</div>
           </div>
-          <a className="scroll-cue" href="#work"><span>SCROLL TO EXPLORE</span><ArrowDown size={14}/></a>
         </section>
 
         <section className="intro-strip">
-          <div className="section-wrap strip-inner"><span>MY CREATIVE CORNER</span><div className="strip-statement">A little bit of <em>logic.</em> A little bit of <em>magic.</em> A whole lot of curiosity. <Asterisk size={18}/></div><span>01 / INTRODUCTION</span></div>
+          <div className="section-wrap strip-inner"><span>MY CREATIVE CORNER</span><div className="strip-statement">A little bit of <em>logic.</em> A little bit of <em>magic.</em> A whole lot of curiosity. <Asterisk size={18}/></div></div>
         </section>
 
         <section className="work-section section-wrap section-pad" id="work">
@@ -198,13 +197,13 @@ function App() {
         <section className="contact-section" id="contact">
           <div className="section-wrap contact-inner">
             <div className="contact-decoration"><div className="contact-orbit orbit-a"/><div className="contact-orbit orbit-b"/><span>✳</span></div>
-            <div className="contact-content reveal"><div className="eyebrow"><span className="eyebrow-line"/> YOUR NEXT INTERN?</div><h2>Let's make<br/>something <span className="serif-word">meaningful.</span></h2><p>I'm excited to learn, contribute, and take on new challenges during my OJT. Have an opportunity in mind? I'd love to hear from you.</p><div style={{marginTop:28}}><ContactForm /></div><p className="contact-small">Or reach me directly:</p><a className="button-light" href="mailto:patiluna.mia0@gmail.com">Say hello <Mail size={17}/></a><div className="contact-icons"><a href="mailto:patiluna.mia0@gmail.com" aria-label="Email"><Mail size={20}/></a><a href="https://github.com/t3n747" target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={20}/></a><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={20}/></a></div></div>
+            <div className="contact-content reveal"><div className="eyebrow"><span className="eyebrow-line"/> YOUR NEXT INTERN?</div><h2>Let's make<br/>something <span className="serif-word">meaningful.</span></h2><p>I'm excited to learn, contribute, and take on new challenges during my OJT. Have an opportunity in mind? I'd love to hear from you.</p></div><div className="contact-form-col reveal"><ContactForm /><div className="contact-icons"><a href="mailto:patiluna.mia0@gmail.com" aria-label="Email"><Mail size={20}/></a><a href="https://github.com/t3n747" target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={20}/></a><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={20}/></a></div></div>
             
           </div>
         </section>
       </main>
 
-      <footer className="site-footer section-wrap"><a href="#home" className="footer-brand">m<span>.</span></a><span>DESIGNED WITH CURIOSITY BY MIA PATILUNA</span><a href="#home" className="back-top">BACK TO TOP ↑</a><span className="footer-year">© 2026</span></footer>
+      <footer className="site-footer section-wrap"><a href="#home" className="footer-brand">m<span>.</span><span>p</span></a><span>DESIGNED WITH CURIOSITY</span><span className="footer-year">© 2026</span></footer>
     </div>
   );
 }
