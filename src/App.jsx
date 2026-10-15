@@ -1,3 +1,4 @@
+import ContactForm from "./ContactForm";
 import React from "react";
 import { useEffect, useState } from "react";
 import {
@@ -12,6 +13,7 @@ import {
   Github,
   Globe2,
   Layers3,
+  Linkedin,
   Mail,
   Menu,
   Palette,
@@ -196,8 +198,8 @@ function App() {
         <section className="contact-section" id="contact">
           <div className="section-wrap contact-inner">
             <div className="contact-decoration"><div className="contact-orbit orbit-a"/><div className="contact-orbit orbit-b"/><span>✳</span></div>
-            <div className="contact-content reveal"><div className="eyebrow"><span className="eyebrow-line"/> YOUR NEXT INTERN?</div><h2>Let's make<br/>something <span className="serif-word">meaningful.</span></h2><p>I'm excited to learn, contribute, and take on new challenges during my OJT. Have an opportunity in mind? I'd love to hear from you.</p><a className="button-light" href="mailto:patiluna.mia0@gmail.com">Say hello <Mail size={17}/></a></div>
-            <div className="contact-side reveal"><span className="contact-side-label">LET'S CONNECT</span><a href="mailto:patiluna.mia0@gmail.com">Email <ArrowUpRight size={15}/></a><a href="https://github.com/t3n747" target="_blank" rel="noreferrer">GitHub <ArrowUpRight size={15}/></a><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn <ArrowUpRight size={15}/></a><span className="contact-side-note">Open to learning<br/>and new possibilities.</span></div>
+            <div className="contact-content reveal"><div className="eyebrow"><span className="eyebrow-line"/> YOUR NEXT INTERN?</div><h2>Let's make<br/>something <span className="serif-word">meaningful.</span></h2><p>I'm excited to learn, contribute, and take on new challenges during my OJT. Have an opportunity in mind? I'd love to hear from you.</p><div style={{marginTop:28}}><ContactForm /></div><p className="contact-small">Or reach me directly:</p><a className="button-light" href="mailto:patiluna.mia0@gmail.com">Say hello <Mail size={17}/></a><div className="contact-icons"><a href="mailto:patiluna.mia0@gmail.com" aria-label="Email"><Mail size={20}/></a><a href="https://github.com/t3n747" target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={20}/></a><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={20}/></a></div></div>
+            
           </div>
         </section>
       </main>
