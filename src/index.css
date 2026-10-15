@@ -60,3 +60,4 @@ button{font:inherit}
 @media(max-width:680px){.footer-year{display:block}}
 #contact .contact-decoration{pointer-events:none}#contact .contact-form-col{position:relative;z-index:2}#contact .contact-form-col form{position:relative;z-index:2}#contact input:not([type="checkbox"]),#contact textarea{position:relative;z-index:2;font-size:16px}#contact input:not([type="checkbox"]):focus,#contact textarea:focus{outline:2px solid #b4adff;outline-offset:2px}
 @media(min-width:760px){.site-header .nav-links{position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap}}
+.site-shell[data-theme="dark"] .button-secondary{background:#fff;color:#191b2b}
