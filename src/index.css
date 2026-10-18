@@ -60,4 +60,34 @@ button{font:inherit}
 @media(max-width:680px){.footer-year{display:block}}
 #contact .contact-decoration{pointer-events:none}#contact .contact-form-col{position:relative;z-index:2}#contact .contact-form-col form{position:relative;z-index:2}#contact input:not([type="checkbox"]),#contact textarea{position:relative;z-index:2;font-size:16px}#contact input:not([type="checkbox"]):focus,#contact textarea:focus{outline:2px solid #b4adff;outline-offset:2px}
 @media(min-width:760px){.site-header .nav-links{position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap}}
-.site-shell[data-theme="dark"] .button-secondary{background:#fff;color:#191b2b}
+.site-shell[data-theme="dark"] .button-secondary{background:#292a43;color:#f4f4fa;border-color:#3b3c54}.site-shell[data-theme="dark"] .button-secondary:hover{background:#343550;border-color:#5b55b8}
+/* Hero photo: static bust, cropped by the ring so there is no hard cut */
+.portrait-abstract .abstract-ring{left:50%;top:45%;height:86%;width:auto;aspect-ratio:1/1;transform:translate(-50%,-50%);z-index:3;pointer-events:none}
+.portrait-abstract .ring-two{height:68%;z-index:1}
+.profile-image{position:absolute;left:50%;top:0;z-index:2;height:100%;width:auto;max-width:none;object-fit:contain;transform:translateX(-50%) rotate(-2deg);transform-origin:50% 45%;animation:none;filter:drop-shadow(0 14px 20px #34316b30);-webkit-mask-image:radial-gradient(ellipse 57.3% 43% at 50% 45%,#000 99%,transparent 100%);mask-image:radial-gradient(ellipse 57.3% 43% at 50% 45%,#000 99%,transparent 100%)}
+.abstract-badge{position:absolute;z-index:3;right:7%;top:9%;width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;box-shadow:0 10px 22px #6558f540}
+.label-star{display:inline-grid;place-items:center;font-size:0}
+.contact-decoration>span{display:grid;place-items:center;top:50%;left:50%;transform:translate(-50%,-50%);animation:none;font-size:0}
+.portrait-abstract .abstract-spark{z-index:3;left:8%;top:32%;bottom:auto;font-size:26px}
+@media(min-width:901px){.hero-visual{height:460px}.portrait-card{height:400px}}
+@media(max-width:680px){.abstract-badge{width:38px;height:38px}}
+/* Dark theme: hero card, white floating cards, and mock-ups */
+.site-shell[data-theme="dark"] .portrait-card{background:#25263e;border-color:#3b3c54;box-shadow:0 24px 70px #00000066}
+.site-shell[data-theme="dark"] .portrait-top,.site-shell[data-theme="dark"] .portrait-bottom{color:#a9a7cc}
+.site-shell[data-theme="dark"] .portrait-abstract .ring-one{border-color:#6a63c9}
+.site-shell[data-theme="dark"] .portrait-abstract .ring-two{border-color:#4a4690}
+.site-shell[data-theme="dark"] .floating-label,.site-shell[data-theme="dark"] .floating-note{background:#292a43;color:#f4f4fa;border-color:#3b3c54;box-shadow:0 12px 30px #00000066,inset 0 0 0 1px #3b3c54}.site-shell[data-theme="dark"] .floating-note small{color:#b9bacb}.site-shell[data-theme="dark"] .note-icon{background:#3d3043}
+.site-shell[data-theme="dark"] .mock-window,.site-shell[data-theme="dark"] .pharmacy-window,.site-shell[data-theme="dark"] .landing-window,.site-shell[data-theme="dark"] .info-window{color:#191b2b}
+.site-shell[data-theme="dark"] .about-right .about-lead{color:#f4f4fa}
+/* Dark theme: low-contrast arrows, accents and shapes */
+.site-shell[data-theme="dark"] .filter-chip.active span{color:#6558f5}
+.site-shell[data-theme="dark"] .filter-chip:hover{border-color:#6558f5;color:#b4adff}
+.site-shell[data-theme="dark"] .filter-chip.active:hover{color:#22233e}
+.site-shell[data-theme="dark"] .nav-links>a:hover,.site-shell[data-theme="dark"] .inline-link:hover,.site-shell[data-theme="dark"] .text-link:hover{color:#b4adff}
+.site-shell[data-theme="dark"] .inline-link:hover{border-color:#b4adff}
+.site-shell[data-theme="dark"] .nav-links a span,.site-shell[data-theme="dark"] .footnote-icon{color:#b4adff}
+.site-shell[data-theme="dark"] .serif-word,.site-shell[data-theme="dark"] .strip-statement em,.site-shell[data-theme="dark"] .brand-mark span,.site-shell[data-theme="dark"] .footer-brand span{color:#b4adff}
+.site-shell[data-theme="dark"] .eyebrow{color:#a6a8bd}
+.site-shell[data-theme="dark"] .contact-section .eyebrow{color:#b1b1cc}
+.site-shell[data-theme="dark"] .meta-icon{background:#2b2c47}
+:root:has(.site-shell[data-theme="dark"]){background:#191a2c}

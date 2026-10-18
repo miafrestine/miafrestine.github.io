@@ -6,18 +6,22 @@ import {
   ArrowDownRight,
   ArrowRight,
   ArrowUpRight,
-  Asterisk,
   Code2,
+  Compass,
   Download,
   Figma,
   Github,
   Globe2,
   Layers3,
+  Lightbulb,
   Linkedin,
   Mail,
   Menu,
   Moon,
+  MousePointer2,
   Palette,
+  PenTool,
+  Rocket,
   Sun,
   X
 } from "lucide-react";
@@ -170,19 +174,18 @@ function App() {
           </div>
           <div className="hero-visual reveal">
             <div className="visual-grid"/>
-            <div className="floating-label label-top"><span className="label-star">✳</span> DESIGN WITH PURPOSE</div>
+            <div className="floating-label label-top"><span className="label-star"><PenTool size={16}/></span> DESIGN WITH PURPOSE</div>
             <div className="portrait-card">
               <div className="portrait-top"><span>CREATIVE MINDSET</span><span>01 — 04</span></div>
-              <div className="portrait-abstract"><div className="abstract-ring ring-one"/><div className="abstract-ring ring-two"/><div className="abstract-sphere"/><div className="abstract-star">✳</div><div className="abstract-spark">✦</div><div className="abstract-caption">curiosity<br/>in motion.</div></div>
+              <div className="portrait-abstract"><div className="abstract-ring ring-one"/><div className="abstract-ring ring-two"/><img className="profile-image" src="/profile.png" alt="Mia Patiluna"/><div className="abstract-badge" aria-hidden="true"><MousePointer2 size={20}/></div><div className="abstract-spark">✦</div></div>
               <div className="portrait-bottom"><span>UI / UX DESIGN</span><span>WEB DEVELOPMENT</span></div>
             </div>
             <div className="floating-note"><span className="note-icon"><Palette size={16}/></span><span><b>Design + technology</b><small>Where my interests meet</small></span></div>
-            <div className="visual-side-note">MADE WITH CURIOSITY · 2026</div>
           </div>
         </section>
 
         <section className="intro-strip">
-          <div className="section-wrap strip-inner"><span>MY CREATIVE CORNER</span><div className="strip-statement">A little bit of <em>logic.</em> A little bit of <em>magic.</em> A whole lot of curiosity. <Asterisk size={18}/></div></div>
+          <div className="section-wrap strip-inner"><span>MY CREATIVE CORNER</span><div className="strip-statement">A little bit of <em>logic.</em> A little bit of <em>magic.</em> A whole lot of curiosity. <Lightbulb size={18}/></div></div>
         </section>
 
         <section className="work-section section-wrap section-pad" id="work">
@@ -194,12 +197,12 @@ function App() {
               <div className="project-details"><div className="project-topline"><span>{project.category}</span><span>{project.number}</span></div><h3>{project.title}</h3><p>{project.description}</p><div className="tag-row">{project.tags.map(tag => <span key={tag}>{tag}</span>)}</div></div>
             </article>)}
           </div>
-          <div className="work-footnote reveal"><span className="footnote-icon"><Layers3 size={16}/></span> These projects were created as academic and group requirements. More case studies coming soon. <span className="footnote-star">✳</span></div>
+          <div className="work-footnote reveal"><span className="footnote-icon"><Layers3 size={16}/></span> These projects were created as academic and group requirements. More case studies coming soon. <span className="footnote-star"><Rocket size={18}/></span></div>
         </section>
 
         <section className="about-section" id="about">
           <div className="section-wrap about-layout section-pad">
-            <div className="about-left reveal"><div className="eyebrow"><span className="eyebrow-line"/> A LITTLE ABOUT ME</div><h2>Curious by nature.<br/><span className="serif-word">Creative</span> by choice.</h2><div className="about-stamp"><span>STUDENT</span><span>DESIGNER</span><span>BUILDER</span><Asterisk size={19}/></div></div>
+            <div className="about-left reveal"><div className="eyebrow"><span className="eyebrow-line"/> A LITTLE ABOUT ME</div><h2>Curious by nature.<br/><span className="serif-word">Creative</span> by choice.</h2><div className="about-stamp"><span>STUDENT</span><span>DESIGNER</span><span>BUILDER</span><Compass size={19}/></div></div>
             <div className="about-right reveal"><p className="about-lead">I enjoy the space where design meets technology.</p><p>As a fourth-year Bachelor of Science in Information Technology student, I'm building my skills in designing and developing websites that balance visual clarity with practical function.</p><p>From a point-of-sale system to pharmacy website concepts, landing pages, and infographics, every project has helped me learn how to communicate ideas, solve problems, and collaborate with others.</p><p>I'm now looking for an OJT opportunity where I can contribute, learn from experienced people, and keep growing as a designer and developer.</p><a className="inline-link" href="#contact">A little more about what I can do <ArrowRight size={16}/></a></div>
           </div>
         </section>
@@ -215,14 +218,14 @@ function App() {
 
         <section className="contact-section" id="contact">
           <div className="section-wrap contact-inner">
-            <div className="contact-decoration"><div className="contact-orbit orbit-a"/><div className="contact-orbit orbit-b"/><span>✳</span></div>
+            <div className="contact-decoration"><div className="contact-orbit orbit-a"/><div className="contact-orbit orbit-b"/><span><Code2 size={110} strokeWidth={1.1}/></span></div>
             <div className="contact-content reveal"><div className="eyebrow"><span className="eyebrow-line"/> YOUR NEXT INTERN?</div><h2>Let's make<br/>something <span className="serif-word">meaningful.</span></h2><p>I'm excited to learn, contribute, and take on new challenges during my OJT. Have an opportunity in mind? I'd love to hear from you.</p></div><div className="contact-form-col reveal"><ContactForm /><div className="contact-icons"><a href="mailto:patiluna.mia0@gmail.com" aria-label="Email"><Mail size={20}/></a><a href="https://github.com/t3n747" target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={20}/></a><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={20}/></a></div></div>
             
           </div>
         </section>
       </main>
 
-      <footer className="site-footer section-wrap"><a href="#home" className="footer-brand">m<span>.</span><span>p</span></a><span>DESIGNED WITH CURIOSITY</span><span className="footer-year">© 2026</span></footer>
+      <footer className="site-footer section-wrap"><a href="#home" className="footer-brand">m<span>.</span><span>p</span></a><span className="footer-year">© 2026</span></footer>
     </div>
   );
 }
