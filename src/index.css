@@ -91,3 +91,12 @@ button{font:inherit}
 .site-shell[data-theme="dark"] .contact-section .eyebrow{color:#b1b1cc}
 .site-shell[data-theme="dark"] .meta-icon{background:#2b2c47}
 :root:has(.site-shell[data-theme="dark"]){background:#191a2c}
+/* Cafe POS project card */
+.cafe-window{width:100%;max-width:440px;min-height:235px;background:#fff;border:1px solid #f2e3d9;border-radius:8px;box-shadow:0 12px 25px #82472b12;transform:rotate(-1deg);display:flex;overflow:hidden;font-family:"DM Sans",sans-serif}
+.cafe-side{width:30px;flex:none;background:#1c1917;display:flex;flex-direction:column;align-items:center;gap:13px;padding-top:16px}.cafe-side i{width:10px;height:10px;border-radius:3px;background:#57534e}.cafe-side i:first-child{background:#f2a65a}
+.cafe-menu{flex:1;min-width:0;padding:12px}.cafe-head{display:flex;justify-content:space-between;align-items:center;gap:6px}.cafe-logo{font-size:10px;font-weight:700;color:#3a2f28;white-space:nowrap}
+.cafe-tabs{display:flex;gap:5px;margin:10px 0}.cafe-tabs span{font-size:7px;font-weight:700;padding:4px 7px;border-radius:99px;color:#78706a}.cafe-tabs .on{background:#1c1917;color:#fff}
+.cafe-items{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.cafe-items>div{min-width:0;border:1px solid #f0e7de;border-radius:7px;padding:5px;display:flex;flex-direction:column;gap:3px}.cafe-items i{display:block;height:44px;border-radius:5px;background:linear-gradient(135deg,#d9a36b,#8a5a3c)}.cafe-items>div:nth-child(2) i{background:linear-gradient(135deg,#6b4a38,#2e211a)}.cafe-items>div:nth-child(3) i{background:linear-gradient(135deg,#f3d7b6,#c68a57)}.cafe-items b{font-size:7px;color:#2b2420;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.cafe-items small{font-size:7px;color:#9a8f86}
+.cafe-ticket{width:34%;flex:none;background:#faf7f2;border-left:1px solid #f0e7de;padding:12px 10px;display:flex;flex-direction:column;gap:7px}.cafe-ticket small{font-size:6px;letter-spacing:.12em;font-weight:700;color:#a09388}.cafe-ticket p{margin:0;display:flex;justify-content:space-between;gap:4px;font-size:8px;color:#4a403a}.cafe-ticket p b{font-weight:700}.cafe-total{margin-top:auto;display:flex;justify-content:space-between;font-size:9px;font-weight:700;color:#2b2420;border-top:1px dashed #e3d6c8;padding-top:7px}.cafe-pay{background:#f2a65a;color:#1c1917;text-align:center;border-radius:6px;padding:7px;font-size:8px;font-weight:700}
+.project-links{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:14px}.project-links .inline-link{margin-top:0}
+.site-shell[data-theme="dark"] .cafe-window{color:#191b2b}

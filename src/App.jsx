@@ -67,6 +67,18 @@ const projects = [
     kind: "infographic",
     label: "LEARN / CREATE / CONNECT",
   },
+  {
+    number: "05",
+    title: "Café POS",
+    category: "Web application",
+    description: "A tablet-style café register built with React. It covers menu browsing with Small, Medium and Large sizes, cash and card checkout, staff PIN sign-in, and end-of-shift X and Z reports.",
+    tags: ["React", "POS interface", "Shift reports"],
+    theme: "peach",
+    kind: "cafe",
+    label: "CAFE POS / SHIFT ACTIVE",
+    url: "https://cafe-pos-umber.vercel.app",
+    repo: "https://github.com/miafrestine/cafe-pos",
+  },
 ];
 
 function ProjectArtwork({ kind }) {
@@ -87,6 +99,27 @@ function ProjectArtwork({ kind }) {
     <div className="pharmacy-window">
       <div className="pharm-nav"><span className="pharm-logo">✳ careplus</span><span>Shop　 About　 Contact</span><button>Explore products ↗</button></div>
       <div className="pharm-hero"><div><span className="mock-eyebrow">WELLNESS STARTS HERE</span><h3>Your health,<br/><em>our priority.</em></h3><p>Everyday essentials for a healthier you.</p><span className="pharm-cta">Discover more <ArrowRight size={13}/></span></div><div className="pharm-bottle"><div className="bottle-cap"/><div className="bottle-label">care<span>+</span><small>DAILY CARE</small></div></div><div className="pharm-orbit"/></div>
+    </div>
+  );
+  if (kind === "cafe") return (
+    <div className="cafe-window">
+      <div className="cafe-side"><i/><i/><i/><i/></div>
+      <div className="cafe-menu">
+        <div className="cafe-head"><span className="cafe-logo">☕ cafe pos</span><span className="mock-pill">● Shift active</span></div>
+        <div className="cafe-tabs"><span className="on">Coffee</span><span>Tea</span><span>Meal</span></div>
+        <div className="cafe-items">
+          <div><i/><b>Espresso</b><small>₱125.00</small></div>
+          <div><i/><b>Cold Brew</b><small>₱145.00</small></div>
+          <div><i/><b>Caramel Macchiato</b><small>₱185.00</small></div>
+        </div>
+      </div>
+      <div className="cafe-ticket">
+        <small>ORDER #2156</small>
+        <p><span>Espresso</span><b>₱125</b></p>
+        <p><span>Cold Brew</span><b>₱145</b></p>
+        <div className="cafe-total"><span>Total</span><b>₱270</b></div>
+        <span className="cafe-pay">Pay ₱270</span>
+      </div>
     </div>
   );
   if (kind === "landing") return (
@@ -193,8 +226,8 @@ function App() {
           <div className="filter-row reveal">{filters.map((filter) => <button key={filter} onClick={() => setActiveFilter(filter)} className={activeFilter === filter ? "filter-chip active" : "filter-chip"}>{filter}{activeFilter === filter && <span>↗</span>}</button>)}</div>
           <div className="project-grid">
             {filteredProjects.map((project, index) => <article className={`project-card reveal ${project.theme}`} key={project.number} style={{transitionDelay:`${index * 90}ms`}}>
-              <a href="#contact" className="project-art" aria-label={`Ask about ${project.title}`}><ProjectArtwork kind={project.kind}/><span className="project-open"><ArrowUpRight size={18}/></span></a>
-              <div className="project-details"><div className="project-topline"><span>{project.category}</span><span>{project.number}</span></div><h3>{project.title}</h3><p>{project.description}</p><div className="tag-row">{project.tags.map(tag => <span key={tag}>{tag}</span>)}</div></div>
+              <a href={project.url ?? "#contact"} {...(project.url ? { target: "_blank", rel: "noreferrer" } : {})} className="project-art" aria-label={project.url ? `Open ${project.title}` : `Ask about ${project.title}`}><ProjectArtwork kind={project.kind}/><span className="project-open"><ArrowUpRight size={18}/></span></a>
+              <div className="project-details"><div className="project-topline"><span>{project.category}</span><span>{project.number}</span></div><h3>{project.title}</h3><p>{project.description}</p><div className="tag-row">{project.tags.map(tag => <span key={tag}>{tag}</span>)}</div>{project.url && <div className="project-links"><a className="inline-link" href={project.url} target="_blank" rel="noreferrer">Live demo <ArrowUpRight size={14}/></a>{project.repo && <a className="inline-link" href={project.repo} target="_blank" rel="noreferrer"><Github size={14}/> Source code</a>}</div>}</div>
             </article>)}
           </div>
           <div className="work-footnote reveal"><span className="footnote-icon"><Layers3 size={16}/></span> These projects were created as academic and group requirements. More case studies coming soon. <span className="footnote-star"><Rocket size={18}/></span></div>
