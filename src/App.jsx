@@ -29,13 +29,15 @@ import {
 const projects = [
   {
     number: "01",
-    title: "Point of Sale System",
+    title: "Café POS",
     category: "Web application",
-    description: "A school project focused on making everyday sales tasks and product tracking more organized.",
-    tags: ["UI design", "Web development"],
-    theme: "lavender",
-    kind: "pos",
-    label: "POS / SALES OVERVIEW",
+    description: "A tablet-style café register built with React. It covers menu browsing with Small, Medium and Large sizes, cash and card checkout, staff PIN sign-in, and end-of-shift X and Z reports.",
+    tags: ["React", "POS interface", "Shift reports"],
+    theme: "peach",
+    kind: "cafe",
+    label: "CAFE POS / SHIFT ACTIVE",
+    url: "https://cafe-pos-umber.vercel.app",
+    repo: "https://github.com/miafrestine/cafe-pos",
   },
   {
     number: "02",
@@ -66,18 +68,6 @@ const projects = [
     theme: "blue",
     kind: "infographic",
     label: "LEARN / CREATE / CONNECT",
-  },
-  {
-    number: "05",
-    title: "Café POS",
-    category: "Web application",
-    description: "A tablet-style café register built with React. It covers menu browsing with Small, Medium and Large sizes, cash and card checkout, staff PIN sign-in, and end-of-shift X and Z reports.",
-    tags: ["React", "POS interface", "Shift reports"],
-    theme: "peach",
-    kind: "cafe",
-    label: "CAFE POS / SHIFT ACTIVE",
-    url: "https://cafe-pos-umber.vercel.app",
-    repo: "https://github.com/miafrestine/cafe-pos",
   },
 ];
 
