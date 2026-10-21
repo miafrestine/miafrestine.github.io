@@ -368,6 +368,22 @@ function App() {
           <div className="work-footnote reveal"><span className="footnote-icon"><Layers3 size={16}/></span> These projects were created as academic and group requirements. More case studies coming soon. <span className="footnote-star"><Rocket size={18}/></span></div>
         </section>
 
+        <section className="about-section" id="about">
+          <div className="section-wrap about-layout section-pad">
+            <div className="about-left reveal"><div className="eyebrow"><span className="eyebrow-line"/> A LITTLE ABOUT ME</div><h2>Curious by nature.<br/><span className="serif-word">Creative</span> by choice.</h2><div className="about-stamp"><span>STUDENT</span><span>DESIGNER</span><span>BUILDER</span><Compass size={19}/></div></div>
+            <div className="about-right reveal"><p className="about-lead">I enjoy the space where design meets technology.</p><p>As a fourth-year Bachelor of Science in Information Technology student, I'm building my skills in designing and developing websites that balance visual clarity with practical function.</p><p>From a point-of-sale system, a utility billing platform, and a scheduling system to pharmacy website concepts, landing pages, and infographics, every project has helped me learn how to communicate ideas, solve problems, and collaborate with others.</p><p>I'm now looking for an OJT opportunity where I can contribute, learn from experienced people, and keep growing as a designer and developer.</p><a className="inline-link" href="#contact">A little more about what I can do <ArrowRight size={16}/></a></div>
+          </div>
+        </section>
+
+        <section className="skills-section section-wrap section-pad" id="skills">
+          <div className="section-heading reveal"><div><div className="eyebrow"><span className="eyebrow-line"/> MY TOOLKIT</div><h2>Skills in <span className="serif-word">progress.</span></h2></div><p>I'm always learning and refining my process. Here's where I'm focusing my energy.</p></div>
+          <div className="skills-grid">
+            <div className="skill-card reveal"><div className="skill-icon purple"><Figma size={21}/></div><span className="skill-number">01</span><h3>UI/UX & visual design</h3><p>Designing clear interfaces, organizing content, and thinking through the user journey.</p><div className="skill-tags"><span>Wireframing</span><span>Layout</span><span>Typography</span></div></div>
+            <div className="skill-card reveal"><div className="skill-icon peach"><Globe2 size={21}/></div><span className="skill-number">02</span><h3>Web design</h3><p>Building responsive page layouts with attention to hierarchy, consistency, and detail.</p><div className="skill-tags"><span>Responsive UI</span><span>Landing pages</span></div></div>
+            <div className="skill-card reveal"><div className="skill-icon mint"><Code2 size={21}/></div><span className="skill-number">03</span><h3>Front-end development</h3><p>Bringing designs to life and learning through hands-on academic projects.</p><div className="skill-tags"><span>HTML / CSS</span><span>JavaScript</span><span>React</span></div></div>
+          </div>
+        </section>
+
         <section className="certifications-section section-wrap section-pad" id="certificates">
           <div className="section-heading reveal"><div><div className="eyebrow"><span className="eyebrow-line"/> WHAT I'VE BEEN LEARNING</div><h2>Certificates &amp; <span className="serif-word">learning.</span></h2></div><p>A few credentials that reflect my curiosity about technology and my commitment to keep learning.</p></div>
           <div className="certificate-grid">
@@ -386,22 +402,6 @@ function App() {
                 </div>
               </article>
             ))}
-          </div>
-        </section>
-
-        <section className="about-section" id="about">
-          <div className="section-wrap about-layout section-pad">
-            <div className="about-left reveal"><div className="eyebrow"><span className="eyebrow-line"/> A LITTLE ABOUT ME</div><h2>Curious by nature.<br/><span className="serif-word">Creative</span> by choice.</h2><div className="about-stamp"><span>STUDENT</span><span>DESIGNER</span><span>BUILDER</span><Compass size={19}/></div></div>
-            <div className="about-right reveal"><p className="about-lead">I enjoy the space where design meets technology.</p><p>As a fourth-year Bachelor of Science in Information Technology student, I'm building my skills in designing and developing websites that balance visual clarity with practical function.</p><p>From a point-of-sale system, a utility billing platform, and a scheduling system to pharmacy website concepts, landing pages, and infographics, every project has helped me learn how to communicate ideas, solve problems, and collaborate with others.</p><p>I'm now looking for an OJT opportunity where I can contribute, learn from experienced people, and keep growing as a designer and developer.</p><a className="inline-link" href="#contact">A little more about what I can do <ArrowRight size={16}/></a></div>
-          </div>
-        </section>
-
-        <section className="skills-section section-wrap section-pad" id="skills">
-          <div className="section-heading reveal"><div><div className="eyebrow"><span className="eyebrow-line"/> MY TOOLKIT</div><h2>Skills in <span className="serif-word">progress.</span></h2></div><p>I'm always learning and refining my process. Here's where I'm focusing my energy.</p></div>
-          <div className="skills-grid">
-            <div className="skill-card reveal"><div className="skill-icon purple"><Figma size={21}/></div><span className="skill-number">01</span><h3>UI/UX & visual design</h3><p>Designing clear interfaces, organizing content, and thinking through the user journey.</p><div className="skill-tags"><span>Wireframing</span><span>Layout</span><span>Typography</span></div></div>
-            <div className="skill-card reveal"><div className="skill-icon peach"><Globe2 size={21}/></div><span className="skill-number">02</span><h3>Web design</h3><p>Building responsive page layouts with attention to hierarchy, consistency, and detail.</p><div className="skill-tags"><span>Responsive UI</span><span>Landing pages</span></div></div>
-            <div className="skill-card reveal"><div className="skill-icon mint"><Code2 size={21}/></div><span className="skill-number">03</span><h3>Front-end development</h3><p>Bringing designs to life and learning through hands-on academic projects.</p><div className="skill-tags"><span>HTML / CSS</span><span>JavaScript</span><span>React</span></div></div>
           </div>
         </section>
 
