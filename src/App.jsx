@@ -1,4 +1,5 @@
 import ContactForm from "./ContactForm";
+import ChatAssistant from "./ChatAssistant";
 import React from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import {
@@ -417,6 +418,7 @@ function App() {
       <footer className="site-footer section-wrap"><a href="#home" className="footer-brand">m<span>.</span><span>p</span></a><span className="footer-year">© 2026</span></footer>
       {viewer && <Viewer project={viewer} onClose={() => setViewer(null)} />}
       {pdfToView && <PDFModal {...pdfToView} onClose={closePDF} />}
+      <ChatAssistant projects={projects} certificates={certificates} />
     </div>
   );
 }
