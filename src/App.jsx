@@ -6,6 +6,8 @@ import {
   ArrowDownRight,
   ArrowRight,
   ArrowUpRight,
+  Award,
+  CalendarDays,
   Code2,
   Compass,
   Download,
@@ -81,6 +83,29 @@ const projects = [
     kind: "schedplus",
     label: "SCHEDPLUS / ACADEMIC SCHEDULING",
     shots: [{ label: "The old way", src: "/schedplus-old.png" }, { label: "SchedPlus", src: "/schedplus.png" }],
+  },
+];
+
+const certificates = [
+  {
+    title: "Introduction to Cybersecurity",
+    issuer: "Cisco Networking Academy",
+    date: "October 21, 2026",
+    preview: "/certificates/introduction-to-cybersecurity.png",
+    pdf: "/certificates/introduction_to_cybersecurity.pdf",
+  },
+  {
+    title: "Introduction to Data Science",
+    issuer: "Cisco Networking Academy",
+    date: "October 21, 2026",
+    preview: "/certificates/introduction-to-data-science.png",
+    pdf: "/certificates/introduction_to_data_science.pdf",
+  },
+  {
+    title: "Introduction to AI Literacy and Responsible Use",
+    issuer: "MAPUA University · OpenLearning",
+    date: "September 14, 2026",
+    pdf: "/certificates/introductiontoailiteracyandresponsibleuse.pdf",
   },
 ];
 
@@ -191,14 +216,14 @@ function Viewer({ project, onClose }) {
   );
 }
 
-function CVModal({ onClose }) {
+function PDFModal({ title, pdf, downloadName, showDownload = true, onClose }) {
   const closeButtonRef = useRef(null);
 
   useEffect(() => {
     const previousActiveElement = document.activeElement;
     const previousOverflow = document.body.style.overflow;
     const focusableElements = () => Array.from(
-      document.querySelectorAll(".cv-modal-panel a[href], .cv-modal-panel button:not([disabled]), .cv-modal-panel iframe[tabindex='0']")
+      document.querySelectorAll(".pdf-modal-panel a[href], .pdf-modal-panel button:not([disabled]), .pdf-modal-panel iframe[tabindex='0']")
     );
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
@@ -231,14 +256,14 @@ function CVModal({ onClose }) {
   }, [onClose]);
 
   return (
-    <div className="viewer cv-viewer" role="dialog" aria-modal="true" aria-labelledby="cv-modal-title" onClick={onClose}>
-      <div className="cv-modal-panel" onClick={(event) => event.stopPropagation()}>
-        <div className="cv-modal-header">
-          <h2 id="cv-modal-title">Mia Patiluna — CV</h2>
-          <a className="cv-download" href="/resume.pdf" download="Mia-Patiluna-CV.pdf"><Download size={16}/> Download PDF</a>
-          <button ref={closeButtonRef} type="button" className="cv-close" onClick={onClose} aria-label="Close CV modal"><X size={19}/></button>
+    <div className="viewer pdf-viewer" role="dialog" aria-modal="true" aria-labelledby="pdf-modal-title" onClick={onClose}>
+      <div className="pdf-modal-panel" onClick={(event) => event.stopPropagation()}>
+        <div className="pdf-modal-header">
+          <h2 id="pdf-modal-title">{title}</h2>
+          {showDownload && <a className="pdf-download" href={pdf} download={downloadName}><Download size={16}/> Download PDF</a>}
+          <button ref={closeButtonRef} type="button" className="pdf-close" onClick={onClose} aria-label={`Close ${title} modal`}><X size={19}/></button>
         </div>
-        <iframe className="cv-pdf" src="/resume.pdf" title="Mia Patiluna resume PDF" tabIndex="0"/>
+        <iframe className="pdf-frame" src={pdf} title={`${title} PDF`} tabIndex="0"/>
       </div>
     </div>
   );
@@ -250,8 +275,8 @@ function App() {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
   const [headerTransparent, setHeaderTransparent] = useState(false);
   const [viewer, setViewer] = useState(null);
-  const [showCV, setShowCV] = useState(false);
-  const closeCV = useCallback(() => setShowCV(false), []);
+  const [pdfToView, setPdfToView] = useState(null);
+  const closePDF = useCallback(() => setPdfToView(null), []);
 
   useEffect(() => {
     const elements = document.querySelectorAll(".reveal");
@@ -296,6 +321,7 @@ function App() {
           <a href="#work" onClick={closeMenu}>Selected work <span>↘</span></a>
           <a href="#about" onClick={closeMenu}>About me</a>
           <a href="#skills" onClick={closeMenu}>Skills</a>
+          <a href="#certificates" onClick={closeMenu}>Certificates</a>
           <a href="#contact" className="nav-contact mobile-connect" onClick={closeMenu}>Let's connect <ArrowUpRight size={15}/></a>
         </nav>
         <div className="header-actions">
@@ -311,7 +337,7 @@ function App() {
             <div className="eyebrow reveal"><span className="eyebrow-line"/> HELLO, I'M MIA — A DESIGN-MINDED IT STUDENT</div>
             <h1 className="hero-title reveal">I turn ideas<br/>into <span className="serif-word">digital</span><br/><span className="title-last">experiences<span className="title-period">.</span></span></h1>
             <p className="hero-description reveal">I'm Mia Patiluna, a fourth-year BSIT student passionate about UI/UX and web design. I love creating digital experiences that feel thoughtful, look beautiful, and work for real people.</p>
-            <div className="hero-actions reveal"><a className="button-primary" href="#work">Explore my work <ArrowDownRight size={17}/></a><button type="button" className="button-secondary" onClick={() => setShowCV(true)}><Eye size={15}/> View CV</button></div>
+            <div className="hero-actions reveal"><a className="button-primary" href="#work">Explore my work <ArrowDownRight size={17}/></a><button type="button" className="button-secondary" onClick={() => setPdfToView({ title: "Mia Patiluna — CV", pdf: "/resume.pdf", downloadName: "Mia-Patiluna-CV.pdf" })}><Eye size={15}/> View CV</button></div>
             <div className="hero-meta reveal"><span className="meta-icon" aria-hidden="true"><span className="meta-dot"/></span><div><b>Currently looking for OJT</b><span>Ready to learn, collaborate, and grow.</span></div></div>
           </div>
           <div className="hero-visual reveal">
@@ -342,6 +368,27 @@ function App() {
           <div className="work-footnote reveal"><span className="footnote-icon"><Layers3 size={16}/></span> These projects were created as academic and group requirements. More case studies coming soon. <span className="footnote-star"><Rocket size={18}/></span></div>
         </section>
 
+        <section className="certifications-section section-wrap section-pad" id="certificates">
+          <div className="section-heading reveal"><div><div className="eyebrow"><span className="eyebrow-line"/> WHAT I'VE BEEN LEARNING</div><h2>Certificates &amp; <span className="serif-word">learning.</span></h2></div><p>A few credentials that reflect my curiosity about technology and my commitment to keep learning.</p></div>
+          <div className="certificate-grid">
+            {certificates.map((certificate, index) => (
+              <article className="certificate-card reveal" key={certificate.title} style={{ transitionDelay: `${index * 90}ms` }}>
+                <button type="button" className="certificate-preview" onClick={() => setPdfToView({ title: certificate.title, pdf: certificate.pdf, showDownload: false })} aria-label={`View ${certificate.title} certificate`}>
+                  {certificate.preview
+                    ? <img src={certificate.preview} alt="" />
+                    : <span className="certificate-placeholder" aria-hidden="true"><span className="certificate-placeholder-brand"><Award size={25}/> MAPUA UNIVERSITY <span>·</span> OPENLEARNING</span><span className="certificate-placeholder-rule"/><strong>{certificate.title}</strong><span className="certificate-placeholder-type">CERTIFICATE OF COMPLETION</span></span>}
+                  <span className="certificate-preview-label">View certificate <ArrowUpRight size={14}/></span>
+                </button>
+                <div className="certificate-details">
+                  <h3>{certificate.title}</h3>
+                  <div className="certificate-meta"><span><Award size={15}/>{certificate.issuer}</span><span><CalendarDays size={14}/>{certificate.date}</span></div>
+                  <button type="button" className="button-primary certificate-link" onClick={() => setPdfToView({ title: certificate.title, pdf: certificate.pdf, showDownload: false })}>View certificate <Eye size={15}/></button>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
         <section className="about-section" id="about">
           <div className="section-wrap about-layout section-pad">
             <div className="about-left reveal"><div className="eyebrow"><span className="eyebrow-line"/> A LITTLE ABOUT ME</div><h2>Curious by nature.<br/><span className="serif-word">Creative</span> by choice.</h2><div className="about-stamp"><span>STUDENT</span><span>DESIGNER</span><span>BUILDER</span><Compass size={19}/></div></div>
@@ -369,7 +416,7 @@ function App() {
 
       <footer className="site-footer section-wrap"><a href="#home" className="footer-brand">m<span>.</span><span>p</span></a><span className="footer-year">© 2026</span></footer>
       {viewer && <Viewer project={viewer} onClose={() => setViewer(null)} />}
-      {showCV && <CVModal onClose={closeCV} />}
+      {pdfToView && <PDFModal {...pdfToView} onClose={closePDF} />}
     </div>
   );
 }
