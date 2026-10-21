@@ -45,7 +45,7 @@ function getPortfolioAnswer(question, projects, certificates) {
   if (/\b(skills?|toolkit|technologies|tech stack)\b/.test(normalized)) {
     return {
       content:
-        "Mia is developing skills in UI/UX and visual design, responsive web design, and front-end development. Her portfolio highlights wireframing, layout, typography, HTML, CSS, JavaScript, and React.",
+        "Mia is developing skills in UI/UX and visual design, responsive web design, and front-end development. Her portfolio highlights wireframing, layout, typography, HTML, CSS, JavaScript, and React. She also has basic knowledge of networking and is currently learning Godot.",
       actions: [{ label: "Explore skills", href: "#skills" }],
     };
   }

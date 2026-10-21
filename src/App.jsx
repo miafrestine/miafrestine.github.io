@@ -382,6 +382,8 @@ function App() {
             <div className="skill-card reveal"><div className="skill-icon purple"><Figma size={21}/></div><span className="skill-number">01</span><h3>UI/UX & visual design</h3><p>Designing clear interfaces, organizing content, and thinking through the user journey.</p><div className="skill-tags"><span>Wireframing</span><span>Layout</span><span>Typography</span></div></div>
             <div className="skill-card reveal"><div className="skill-icon peach"><Globe2 size={21}/></div><span className="skill-number">02</span><h3>Web design</h3><p>Building responsive page layouts with attention to hierarchy, consistency, and detail.</p><div className="skill-tags"><span>Responsive UI</span><span>Landing pages</span></div></div>
             <div className="skill-card reveal"><div className="skill-icon mint"><Code2 size={21}/></div><span className="skill-number">03</span><h3>Front-end development</h3><p>Bringing designs to life and learning through hands-on academic projects.</p><div className="skill-tags"><span>HTML / CSS</span><span>JavaScript</span><span>React</span></div></div>
+            <div className="skill-card reveal"><div className="skill-icon peach"><Globe2 size={21}/></div><span className="skill-number">04</span><h3>Networking fundamentals</h3><p>I have basic knowledge of computer networking concepts.</p><div className="skill-tags"><span>Basic knowledge</span></div></div>
+            <div className="skill-card reveal"><div className="skill-icon purple"><Code2 size={21}/></div><span className="skill-number">05</span><h3>Learning Godot</h3><p>Currently exploring the Godot game engine and building my skills.</p><div className="skill-tags"><span>Currently learning</span></div></div>
           </div>
         </section>
 
